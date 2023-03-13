@@ -4,6 +4,9 @@ const app = express()
 
 app.get('/', (req, res) => {
     let html = "<h1>Hello World Player</h1>"
+    if(req.query.videoFile) {
+        html += `<video id="videoPlayer" controls><source src="${req.query.videoFile}"></video><BR><BR>`
+    }
     res.send(html)
 })
 
