@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
         html += `<video id="videoPlayer" controls><source src="${req.query.videoFile}"></video><BR><BR>`
     }
     if(req.query.audioFile) {
-        html += `<audio controls><source src="${req.query.audioFile}""></audio><BR><BR>`
+        html += `<audio id="audioPlayer" controls><source src="${req.query.audioFile}""></audio><BR><BR>`
     }
     res.send(html)
 })
