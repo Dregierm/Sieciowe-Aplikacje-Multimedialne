@@ -21,11 +21,11 @@ app.get('/', (req, res) => {
 
     html += `<script>
         function cancelVideo() {
-            document.getElementById("videoPlayer").children[0].src="cancel.mp4";
+            document.getElementById("videoPlayer").src="cancel.mp4";
         }
 
         function cancelAudio() {
-            document.getElementById("audioPlayer").children[0].src="cancel.mp3";
+            document.getElementById("audioPlayer").src="cancel.mp3";
         }
 
     </script>
