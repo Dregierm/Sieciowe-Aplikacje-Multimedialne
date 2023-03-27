@@ -10,6 +10,11 @@ app.get('/', (req, res) => {
     if(req.query.audioFile) {
         html += `<audio id="audioPlayer" controls><source src=${req.query.audioFile}></audio><BR><BR>`
     }
+
+    if(req.query.imgFile) {
+        html += `<img src=${req.query.imgFile}><BR><BR>`
+    }
+
     res.send(html)
 })
 
