@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     }
 
     if(req.query.imgFile) {
-        html += `<img src=${req.query.imgFile}><BR><BR>`
+        html += `<img id="posterImage" src=${req.query.imgFile}><BR><BR>`
     }
 
     res.send(html)
