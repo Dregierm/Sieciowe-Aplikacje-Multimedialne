@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
     if(req.query.imgFile) {
         html += `<img id="posterImage" src=${req.query.imgFile}><BR><BR>`
         html += `<button id="imgAdd" onClick="addToTable('Image')">Add image</button><BR><BR>`;
-
     }
 
     html += `
