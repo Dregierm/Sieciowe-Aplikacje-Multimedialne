@@ -45,8 +45,24 @@ app.get('/', (req, res) => {
     </table>
 
     <script>
+    let counter = 1;
     function addToTable(type) {
+        let src;
+        if (type == 'audio')
+            src = document.getElementById('audioPlayer').getElementsByTagName("source")[0].src;
+        else if (type == 'video')
+            src = document.getElementById('videoPlayer').getElementsByTagName("source")[0].src;
+        else if (type == 'image')
+            src = document.getElementById('posterImage').getAttribute('src');
+
+        let table = document.getElementById('playlist_table');
+        let newRow = table.insertRow(-1);
+
+        newRow.insertCell(0).innerText = counter;
+        newRow.insertCell(1).innerText = src;
+        newRow.insertCell(2).innerText = type;
     
+        counter++;
     }
     </script>
     `
