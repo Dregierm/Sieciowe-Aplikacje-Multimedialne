@@ -3,7 +3,19 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-    let html = "<body><h1>Hello World Player</h1>"
+    let html = `
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+    </head>
+    <body>
+        <h1>Hello World Player</h1>
+    `
 
     if(req.query.videoFile) {
         html += `<video id="videoPlayer" controls><source src=${req.query.videoFile}></video><BR><BR>`
@@ -18,6 +30,16 @@ app.get('/', (req, res) => {
     if(req.query.imgFile) {
         html += `<img id="posterImage" src=${req.query.imgFile}><BR><BR>`
     }
+    
+        html += `
+    <table id='playlist_table'>
+        <tr>
+            <th>No.</th>
+            <th>URL</th>
+            <th>Type</th>
+        </tr>
+    </table>
+   `
 
     html += `<script>
         function cancelVideo() {
