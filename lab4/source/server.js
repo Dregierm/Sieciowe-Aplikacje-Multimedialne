@@ -61,6 +61,7 @@ app.get('/', (req, res) => {
         newRow.insertCell(0).innerText = counter;
         newRow.insertCell(1).innerText = src;
         newRow.insertCell(2).innerText = type;
+        let newRowAction = newRow.insertCell(3);
     
    	let newButton = document.createElement('button');
    	newButton.classList.add('removeRowButton');
