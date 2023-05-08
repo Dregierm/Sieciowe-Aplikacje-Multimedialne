@@ -63,6 +63,7 @@ app.get('/', (req, res) => {
         newRow.insertCell(2).innerText = type;
     
    	let newButton = document.createElement('button');
+   	newButton.classList.add('removeRowButton');
     
         counter++;
     }
