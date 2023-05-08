@@ -67,6 +67,7 @@ app.get('/', (req, res) => {
    	newButton.classList.add('removeRowButton');
    	newButton.textContent = 'Delete';
     
+    	newRowAction.appendChild(newButton);
         counter++;
     }
     </script>
