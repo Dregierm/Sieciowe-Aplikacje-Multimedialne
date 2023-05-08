@@ -66,7 +66,9 @@ app.get('/', (req, res) => {
    	let newButton = document.createElement('button');
    	newButton.classList.add('removeRowButton');
    	newButton.textContent = 'Delete';
-    
+        newButton.addEventListener('click', (event) => {
+            console.log('test');
+        });
     	newRowAction.appendChild(newButton);
         counter++;
     }
