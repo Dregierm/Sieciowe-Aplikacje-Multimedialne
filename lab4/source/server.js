@@ -62,6 +62,8 @@ app.get('/', (req, res) => {
         newRow.insertCell(1).innerText = src;
         newRow.insertCell(2).innerText = type;
     
+   	let newButton = document.createElement('button');
+    
         counter++;
     }
     </script>
