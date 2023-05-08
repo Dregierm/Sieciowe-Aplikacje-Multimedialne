@@ -62,14 +62,25 @@ app.get('/', (req, res) => {
         newRow.insertCell(1).innerText = src;
         newRow.insertCell(2).innerText = type;
         let newRowAction = newRow.insertCell(3);
-    
-   	let newButton = document.createElement('button');
-   	newButton.classList.add('removeRowButton');
-   	newButton.textContent = 'Delete';
+
+        let newButton = document.createElement('button');
+        newButton.classList.add('removeRowButton');
+        newButton.textContent = 'Delete';
         newButton.addEventListener('click', (event) => {
-            console.log('test');
+            let button = event.target;
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            
+            if (table.rows.length == 1)
+            	counter = 1;
+            	
+            for (let i = 1; i < table.rows.length; i++) {
+                table.rows[i].cells[0].innerText = i;
+                counter = i + 1;
+            }
         });
-    	newRowAction.appendChild(newButton);
+        newRowAction.appendChild(newButton);
+   
         counter++;
     }
     </script>
