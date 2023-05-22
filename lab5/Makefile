@@ -1,4 +1,4 @@
-docker_name:=lab0_test_js
+docker_name:=lab5_mateusz_dregier_js
 container_name:=lab0_test_container_js
 port:=4080
 docker_build:
