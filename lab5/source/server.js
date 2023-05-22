@@ -85,6 +85,10 @@ app.get('/', (req, res) => {
         upBtn.classList.add('moveRowUpButton');
         upBtn.textContent = 'Up';
         newRowAction.appendChild(upBtn);
+        
+        let downBtn = document.createElement('button');
+        downBtn.textContent = 'Down';
+        newRowAction.appendChild(downBtn);
    
         counter++;
     }
