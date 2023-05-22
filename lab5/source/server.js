@@ -90,6 +90,32 @@ app.get('/', (req, res) => {
         downBtn.classList.add('moveRowDownButton');
         downBtn.textContent = 'Down';
         newRowAction.appendChild(downBtn);
+        
+        upBtn.addEventListener('click', (event) => {
+            let button = event.target;
+            let rowToMove = button.parentNode.parentNode;
+            let rowIndex = rowToMove.rowIndex;
+            let rows = Array.from(table.rows);
+            
+            if (rowIndex <= 1) {
+                rows.splice(rowIndex,1);
+                rows.push(rowToMove);
+            } else {
+                while (table.rows.length > 0) 
+                    table.deleteRow(0);
+                    
+                [rows[rowIndex], rows[rowIndex-1]] = [rows[rowIndex-1], rows[rowIndex]];
+            }
+            
+            for(let i = 0; i < rows.length; i++)
+                table.appendChild(rows[i]);
+            
+            for (let i = 1; i < table.rows.length; i++) {
+                table.rows[i].cells[0].innerText = i;
+                counter = i + 1;
+            }
+         
+        });
    
         counter++;
     }
