@@ -87,6 +87,7 @@ app.get('/', (req, res) => {
         newRowAction.appendChild(upBtn);
         
         let downBtn = document.createElement('button');
+        downBtn.classList.add('moveRowDownButton');
         downBtn.textContent = 'Down';
         newRowAction.appendChild(downBtn);
    
