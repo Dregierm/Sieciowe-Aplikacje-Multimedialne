@@ -70,22 +70,22 @@ app.get('/', (req, res) => {
             let button = event.target;
             let row = button.parentNode.parentNode;
             row.parentNode.removeChild(row);
-            
+           
             if (table.rows.length == 1)
-            	counter = 1;
-            	
+                counter = 1;
+               
             for (let i = 1; i < table.rows.length; i++) {
                 table.rows[i].cells[0].innerText = i;
                 counter = i + 1;
             }
         });
         newRowAction.appendChild(newButton);
-        
+
         let upBtn = document.createElement('button');
         upBtn.classList.add('moveRowUpButton');
         upBtn.textContent = 'Up';
         newRowAction.appendChild(upBtn);
-        
+
         let downBtn = document.createElement('button');
         downBtn.classList.add('moveRowDownButton');
         downBtn.textContent = 'Down';
@@ -112,10 +112,35 @@ app.get('/', (req, res) => {
             
             for (let i = 1; i < table.rows.length; i++) {
                 table.rows[i].cells[0].innerText = i;
-                counter = i + 1;
+                counter = i+1;
             }
          
         });
+        
+        downBtn.addEventListener('click', (event) => {
+            let button = event.target;
+            let rowToMove = button.parentNode.parentNode;
+            let rowIndex = rowToMove.rowIndex;
+            let rows = Array.from(table.rows);
+            
+            if (rowIndex >= rows.length-1) {
+                rows.splice(rowIndex,1);
+                rows.splice(1, 0, rowToMove);
+            } else {
+                while (table.rows.length > 0) 
+                    table.deleteRow(0);
+                [rows[rowIndex], rows[rowIndex+1]] = [rows[rowIndex+1], rows[rowIndex]];
+            }
+            for(let i = 0; i < rows.length; i++)
+                table.appendChild(rows[i]);
+            
+            for (let i = 1; i < table.rows.length; i++) {
+                table.rows[i].cells[0].innerText = i;
+                counter = i+1;
+            }
+         
+        });
+       
    
         counter++;
     }
