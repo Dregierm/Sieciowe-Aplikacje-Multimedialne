@@ -80,6 +80,10 @@ app.get('/', (req, res) => {
             }
         });
         newRowAction.appendChild(newButton);
+        
+        let upBtn = document.createElement('button');
+        upBtn.textContent = 'Up';
+        newRowAction.appendChild(upBtn);
    
         counter++;
     }
