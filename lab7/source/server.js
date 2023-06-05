@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
         html += `<audio id="audioPlayer" controls><source src=${req.query.audioFile}></audio><BR><BR>`
         html += `<button id="audioCancel" onClick="cancelAudio()">cancel audio</button><BR><BR>`
         html += `<button id="audioAdd" onClick="addToTable('Audio')">Add audio</button><BR><BR>`;
+        html += `<button id="audioPlay" onClick="playAudio()">Play Audio</button><br><br>`;
     }
 
     if(req.query.imgFile) {
