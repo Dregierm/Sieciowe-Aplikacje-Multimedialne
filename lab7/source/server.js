@@ -167,6 +167,14 @@ app.get('/', (req, res) => {
         function cancelAudio() {
             document.getElementById("audioPlayer").src="cancel.mp3";
         }
+        
+        function playAudio() {
+            document.getElementById("audioPlayer").play();
+        }
+        
+        function pauseAudio() {
+            document.getElementById("audioPlayer").pause();
+        }
     </script>`
 
     html +=`
