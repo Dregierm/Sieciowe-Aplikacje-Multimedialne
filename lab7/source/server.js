@@ -155,6 +155,14 @@ app.get('/', (req, res) => {
         function cancelVideo() {
             document.getElementById("videoPlayer").src="cancel.mp4";
         }
+        
+        function playVideo() {
+            document.getElementById("videoPlayer").play();
+        }
+        
+        function pauseVideo() {
+            document.getElementById("videoPlayer").pause();
+        }
 
         function cancelAudio() {
             document.getElementById("audioPlayer").src="cancel.mp3";
