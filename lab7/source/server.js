@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
         html += `<button id="videoCancel" onClick="cancelVideo()">cancel video</button><BR><BR>`
         html += `<button id="videoAdd" onClick="addToTable('Video')">Add video</button><BR><BR>`;
         html += `<button id="videoPlay" onClick="playVideo()">Play Video</button><br><br>`;
+    	html += `<button id="videoPause" onClick="pauseVideo()">Pause Video</button><br><br>`;
     }
 
     if(req.query.audioFile) {
