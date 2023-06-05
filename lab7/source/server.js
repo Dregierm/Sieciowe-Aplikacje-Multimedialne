@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
         html += `<video id="videoPlayer" controls><source src=${req.query.videoFile}></video><BR><BR>`
         html += `<button id="videoCancel" onClick="cancelVideo()">cancel video</button><BR><BR>`
         html += `<button id="videoAdd" onClick="addToTable('Video')">Add video</button><BR><BR>`;
+        html += `<button id="videoPlay" onClick="playVideo()">Play Video</button><br><br>`;
     }
 
     if(req.query.audioFile) {
